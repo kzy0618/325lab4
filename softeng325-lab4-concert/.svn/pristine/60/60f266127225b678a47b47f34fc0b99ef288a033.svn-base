@@ -1,0 +1,19 @@
+@org.hibernate.annotations.GenericGenerator(
+    name = "ID_GENERATOR",
+    strategy = "enhanced-sequence"
+)
+
+@XmlJavaTypeAdapters({
+    @XmlJavaTypeAdapter(type=LocalDateTime.class,
+        value=LocalDateTimeAdapter.class)
+})
+
+package nz.ac.auckland.concert.domain;
+ 
+import java.time.LocalDateTime;
+
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters;
+
+import nz.ac.auckland.concert.jaxb.LocalDateTimeAdapter;
+
